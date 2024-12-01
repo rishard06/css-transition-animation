@@ -1,0 +1,111 @@
+*, body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    box-sizing: border-box;
+    padding: 0;
+    /* margin: 0; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+button {
+    margin: 60px 100px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: skyblue;
+    font-size: 1.1rem;
+}
+
+.transition{
+    transform: scale(1, 1);
+    transition: background-color 200ms, transform 200ms ease;
+}
+
+.transition:hover {
+    transform: scale(1.2, 1.2);
+    background-color: royalblue;
+}
+
+.modal-btn {
+    transform: scale(1, 1);
+    transition: trasform 2000ms ease-out;
+}
+
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-200%);
+    position: absolute;
+    opacity: 0;
+    background-color: lightslategray;
+    border-radius: 10px;
+    transition: transform 1s, opacity .5s ease-in-out;
+}
+
+.modal.show {
+    opacity: 1;
+    transform: translateY(0);
+    border: 1px solid black;
+    position: absolute;
+}
+
+.backdrop {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0%;
+}
+
+.backdrop.show {
+    opacity: 30%;
+}
+
+.dropdown-menu {
+    transform: translate(200%, 60%);
+    animation: expand 500ms ease-in-out;
+    transform-origin: top;
+    display: none;
+}
+
+.dropdown-menu li {
+    padding: 5px;
+    text-align: center;
+    list-style: none;
+    width: 200px;
+    height: 40px;
+    border: none;   
+    background-color: lightslategray;
+    font-size: 1.1rem;
+}
+
+.dropdown-menu li:hover {
+    background-color: skyblue;
+}
+
+.dropdown-menu.visible {
+    display: block;
+}
+
+@keyframes expand {
+    0% {
+      transform: scaleY(0);
+    }
+  
+    70% {
+      transform: scaleY(1.1);
+    }
+    
+    100% {
+      transform: scaleY(1);
+    }
+  }         
